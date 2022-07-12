@@ -3,7 +3,7 @@
 
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Atlantis Lite - Bootstrap 4 Admin Dashboard</title>
+	<title>Phương Châu Dashboard</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="assets/img/icon.ico" type="image/x-icon" />
 
@@ -20,6 +20,7 @@
 	</script>
 
 	<!-- CSS Files -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/atlantis.css">
 </head>
@@ -30,9 +31,15 @@
 			<div class="content">
 				<div class="panel-header bg-primary-gradient">
 					<div class="page-inner">
-						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-							<div>
-								<h5 class="text-white op-7 mb-2"> </h5>
+						<div class="row">
+							<div class="col-md-4">
+								<div class="card-light">
+									<div id="reportrange"
+										style="cursor: pointer; width: 100%; padding: 10px; text-align: center;">
+										<i class="fa fa-calendar"></i>&nbsp;
+										<span></span> <i class="fa fa-caret-down"></i>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -66,16 +73,16 @@
 						<div class="col-md-8">
 							<div class="card full-height">
 								<div class="card-body">
-									<div class="card-title">Overall statistics</div>
+									<div class="card-title">Các chỉ số chung của bệnh viện</div>
 									<div class="card-category">Daily information about statistics in system</div>
 									<div class="d-flex flex-wrap justify-content-around pb-2 pt-4">
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-1"></div>
-											<h6 class="fw-bold mt-3 mb-0">New Users</h6>
+											<h6 class="fw-bold mt-3 mb-0">5S Khoa phòng</h6>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-2"></div>
-											<h6 class="fw-bold mt-3 mb-0">Sales</h6>
+											<h6 class="fw-bold mt-3 mb-0">Nhiễm khuẩn</h6>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-3"></div>
@@ -84,6 +91,10 @@
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-4"></div>
 											<h6 class="fw-bold mt-3 mb-0">New Users</h6>
+										</div>
+										<div class="px-2 pb-2 pb-md-0 text-center">
+											<div id="circles-5"></div>
+											<h6 class="fw-bold mt-3 mb-0">Sales</h6>
 										</div>
 									</div>
 								</div>
@@ -99,13 +110,13 @@
 									</div>
 								</div>
 								<div class="card-body">
-									<div id="chartdiv" class="chart-container" style="min-height: 600px">
+									<div id="chartdiv" class="chart-container" style="min-height: 440px">
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="card card-primary">
+							<div class="card card-info">
 								<div class="card-header">
 									<div class="card-title">Daily Sales</div>
 									<div class="card-category">March 25 - April 02</div>
@@ -570,6 +581,8 @@
 	<script src="assets/js/core/jquery.3.2.1.min.js"></script>
 	<script src="assets/js/core/popper.min.js"></script>
 	<script src="assets/js/core/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
 	<!-- jQuery UI -->
 	<script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
@@ -606,30 +619,17 @@
 	<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
 	<script src="assets/js/charts/demo1.js"></script>
+	<script src="assets/js/charts/circles.js"></script>
 
 	<script>
-		Circles.create({
-			id: 'circles-1',
-			radius: 45,
-			value: 68,
-			maxValue: 100,
-			width: 7,
-			text: 15,
-			colors: ['#f1f1f1', '#FF9E27'],
-			duration: 400,
-			wrpClass: 'circles-wrp',
-			textClass: 'circles-text',
-			styleWrapper: true,
-			styleText: true
-		})
 
 		Circles.create({
 			id: 'circles-2',
 			radius: 45,
-			value: 70,
+			value: 98,
 			maxValue: 100,
 			width: 7,
-			text: 36,
+			text: '0%',
 			colors: ['#f1f1f1', '#2BB930'],
 			duration: 400,
 			wrpClass: 'circles-wrp',
@@ -661,6 +661,21 @@
 			width: 7,
 			text: 12,
 			colors: ['#f1f1f1', '#F25961'],
+			duration: 400,
+			wrpClass: 'circles-wrp',
+			textClass: 'circles-text',
+			styleWrapper: true,
+			styleText: true
+		})
+
+		Circles.create({
+			id: 'circles-5',
+			radius: 45,
+			value: 68,
+			maxValue: 100,
+			width: 7,
+			text: 15,
+			colors: ['#f1f1f1', '#FF9E27'],
 			duration: 400,
 			wrpClass: 'circles-wrp',
 			textClass: 'circles-text',
@@ -714,6 +729,34 @@
 			lineWidth: '2',
 			lineColor: '#ffa534',
 			fillColor: 'rgba(255, 165, 52, .14)'
+		});
+	</script>
+
+	<script type="text/javascript">
+		$(function () {
+
+			var start = moment().subtract(29, 'days');
+			var end = moment();
+
+			function cb(start, end) {
+				$('#reportrange span').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
+			}
+
+			$('#reportrange').daterangepicker({
+				startDate: start,
+				endDate: end,
+				ranges: {
+					'Today': [moment(), moment()],
+					'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+					'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+					'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+					'This Month': [moment().startOf('month'), moment().endOf('month')],
+					'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+				}
+			}, cb);
+
+			cb(start, end);
+
 		});
 	</script>
 </body>
