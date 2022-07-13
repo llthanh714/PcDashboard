@@ -49,15 +49,15 @@
 						<div class="col-md-4">
 							<div class="card full-height">
 								<div class="card-body">
-									<div class="card-title">Total income & spend statistics</div>
+									<div class="card-title">Tổng lượt tiếp nhận ngoại - nội trú</div>
 									<div class="row py-3">
 										<div class="col-md-4 d-flex flex-column justify-content-around">
 											<div>
-												<h6 class="fw-bold text-uppercase text-success op-8">Total Income</h6>
+												<h6 class="fw-bold text-uppercase text-success op-8">Ngoại trú</h6>
 												<h3 class="fw-bold">$9.782</h3>
 											</div>
 											<div>
-												<h6 class="fw-bold text-uppercase text-danger op-8">Total Spend</h6>
+												<h6 class="fw-bold text-uppercase text-danger op-8">Nội trú</h6>
 												<h3 class="fw-bold">$1,248</h3>
 											</div>
 										</div>
@@ -611,118 +611,27 @@
 	<script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 
 	<!-- Atlantis JS -->
-	<script src="assets/js/atlantis.min.js"></script>
+	<script src="assets/js/atlantis.js"></script>
 
 	<!-- Resources -->
 	<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
 	<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
 	<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
+	<!-- Charts -->
 	<script src="assets/js/charts/demo1.js"></script>
 	<script src="assets/js/charts/circles.js"></script>
+	<script src="assets/js/charts/kham-noi-ngoai.js"></script>
 
+	<!-- Call Functions -->
 	<script>
+		createCircles('circles-1', 68, '#FF9E27');
+		createCircles('circles-2', 98, '#2BB930');
+		createCircles('circles-3', 40, '#F25961');
+		createCircles('circles-4', 88, '#FF9E27');
+		createCircles('circles-5', 100, '#2BB930');
 
-		Circles.create({
-			id: 'circles-2',
-			radius: 45,
-			value: 98,
-			maxValue: 100,
-			width: 7,
-			text: '0%',
-			colors: ['#f1f1f1', '#2BB930'],
-			duration: 400,
-			wrpClass: 'circles-wrp',
-			textClass: 'circles-text',
-			styleWrapper: true,
-			styleText: true
-		})
-
-		Circles.create({
-			id: 'circles-3',
-			radius: 45,
-			value: 40,
-			maxValue: 100,
-			width: 7,
-			text: 12,
-			colors: ['#f1f1f1', '#F25961'],
-			duration: 400,
-			wrpClass: 'circles-wrp',
-			textClass: 'circles-text',
-			styleWrapper: true,
-			styleText: true
-		})
-
-		Circles.create({
-			id: 'circles-4',
-			radius: 45,
-			value: 40,
-			maxValue: 100,
-			width: 7,
-			text: 12,
-			colors: ['#f1f1f1', '#F25961'],
-			duration: 400,
-			wrpClass: 'circles-wrp',
-			textClass: 'circles-text',
-			styleWrapper: true,
-			styleText: true
-		})
-
-		Circles.create({
-			id: 'circles-5',
-			radius: 45,
-			value: 68,
-			maxValue: 100,
-			width: 7,
-			text: 15,
-			colors: ['#f1f1f1', '#FF9E27'],
-			duration: 400,
-			wrpClass: 'circles-wrp',
-			textClass: 'circles-text',
-			styleWrapper: true,
-			styleText: true
-		})
-
-		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
-
-		var mytotalIncomeChart = new Chart(totalIncomeChart, {
-			type: 'bar',
-			data: {
-				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
-				datasets: [{
-					label: "Total Income",
-					backgroundColor: '#ff9e27',
-					borderColor: 'rgb(23, 125, 255)',
-					data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 15],
-				}],
-			},
-			options: {
-				responsive: true,
-				maintainAspectRatio: false,
-				legend: {
-					display: false,
-				},
-				scales: {
-					yAxes: [{
-						ticks: {
-							display: false //this will remove only the label
-						},
-						gridLines: {
-							drawBorder: false,
-							display: false
-						}
-					}],
-					xAxes: [{
-						gridLines: {
-							drawBorder: false,
-							display: false
-						}
-					}]
-				},
-			}
-		});
-
-		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 115], {
+		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 250], {
 			type: 'line',
 			height: '70',
 			width: '100%',
@@ -730,34 +639,7 @@
 			lineColor: '#ffa534',
 			fillColor: 'rgba(255, 165, 52, .14)'
 		});
-	</script>
 
-	<script type="text/javascript">
-		$(function () {
-
-			var start = moment().subtract(29, 'days');
-			var end = moment();
-
-			function cb(start, end) {
-				$('#reportrange span').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
-			}
-
-			$('#reportrange').daterangepicker({
-				startDate: start,
-				endDate: end,
-				ranges: {
-					'Today': [moment(), moment()],
-					'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-					'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-					'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-					'This Month': [moment().startOf('month'), moment().endOf('month')],
-					'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-				}
-			}, cb);
-
-			cb(start, end);
-
-		});
 	</script>
 </body>
 
