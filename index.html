@@ -23,6 +23,7 @@
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/atlantis.css">
+
 </head>
 
 <body>
@@ -32,7 +33,17 @@
 				<div class="panel-header bg-primary-gradient">
 					<div class="page-inner">
 						<div class="row">
-							<div class="col-md-4">
+							<!-- <div class="col-md-1">
+								<select class="form-select card-light" style="padding: 10px; min-width: 130px;">
+									<option value="00">Cần Thơ</option>
+									<option value="01">Sa Đéc</option>
+									<option value="02">Sóc Trăng</option>
+								</select>
+							</div> -->
+							<div class="col-md-9">
+								<div class="card-title" style="color: white;">DASHBOARD QLCL - BVQT PHƯƠNG CHÂU</div>
+							</div>
+							<div class="col-md-3">
 								<div class="card-light">
 									<div id="reportrange"
 										style="cursor: pointer; width: 100%; padding: 10px; text-align: center;">
@@ -74,11 +85,11 @@
 							<div class="card full-height">
 								<div class="card-body">
 									<div class="card-title">Các chỉ số chung của bệnh viện</div>
-									<div class="card-category">Daily information about statistics in system</div>
+									<div class="card-category"></div>
 									<div class="d-flex flex-wrap justify-content-around pb-2 pt-4">
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-1"></div>
-											<h6 class="fw-bold mt-3 mb-0">5S Khoa phòng</h6>
+											<a onclick="createCircles('circles-1', 68, 90)" style="text-decoration: none; cursor: pointer;"><h6 class="fw-bold mt-3 mb-0">5S Khoa phòng</h6></a>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-2"></div>
@@ -95,6 +106,10 @@
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-5"></div>
 											<h6 class="fw-bold mt-3 mb-0">Sales</h6>
+										</div>
+										<div class="px-2 pb-2 pb-md-0 text-center">
+											<div id="circles-6"></div>
+											<h6 class="fw-bold mt-3 mb-0">Test</h6>
 										</div>
 									</div>
 								</div>
@@ -577,6 +592,7 @@
 		</div>
 
 	</div>
+
 	<!--   Core JS Files   -->
 	<script src="assets/js/core/jquery.3.2.1.min.js"></script>
 	<script src="assets/js/core/popper.min.js"></script>
@@ -590,7 +606,6 @@
 
 	<!-- jQuery Scrollbar -->
 	<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-
 
 	<!-- Chart JS -->
 	<script src="assets/js/plugin/chart.js/chart.min.js"></script>
@@ -625,11 +640,12 @@
 
 	<!-- Call Functions -->
 	<script>
-		createCircles('circles-1', 68, '#FF9E27');
-		createCircles('circles-2', 98, '#2BB930');
-		createCircles('circles-3', 40, '#F25961');
-		createCircles('circles-4', 88, '#FF9E27');
-		createCircles('circles-5', 100, '#2BB930');
+		createCircles('circles-1', 68, 90);
+		createCircles('circles-2', 98, 93);
+		createCircles('circles-3', 75, 75);
+		createCircles('circles-4', 93, 99);
+		createCircles('circles-5', 100, 100);
+		createCircles('circles-6', 33, 35);
 
 		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 250], {
 			type: 'line',

@@ -2,12 +2,12 @@ var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2
 var mytotalIncomeChart = new Chart(totalIncomeChart, {
     type: 'bar',
     data: {
-        labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
+        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", ""],
         datasets: [{
-            label: "Total Income",
+            label: "Tổng",
             backgroundColor: '#ff9e27',
             borderColor: 'rgb(23, 125, 255)',
-            data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 15],
+            data: [6, 5, 9, 5, 4, 6, 4, 0],
         }],
     },
     options: {

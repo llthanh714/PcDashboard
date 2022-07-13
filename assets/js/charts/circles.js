@@ -1,7 +1,18 @@
-function createCircles(id, value, color) {
+function createCircles(id, value, base) {
+    var color = '';
+    if (value < base - 10) {
+        color = '#F25961';
+    }
+    else if (value >= base - 10 && value < base) {
+        color = '#FF9E27';
+    }
+    else {
+        color = '#2BB930';
+    }
+
     Circles.create({
         id: id,
-        radius: 45,
+        radius: 40,
         value: value,
         maxValue: 100,
         width: 7,
