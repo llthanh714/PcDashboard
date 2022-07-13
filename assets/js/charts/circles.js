@@ -1,5 +1,5 @@
 function createCircles(id, branch, idChiSo, from, to) {
-    postData('http://localhost:9839/api/chiso/tongquan', {
+    postData('http://113.161.210.94:9001/pcportal/api/chiso/tongquan', {
         ChiNhanh: branch,
         ChiSo: idChiSo,
         TuNgay: from,
