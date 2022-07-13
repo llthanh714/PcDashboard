@@ -1,7 +1,11 @@
 function createCircles(id, branch, idChiSo, from, to) {
-    postData('http://localhost:9839/api/chiso/tongquan', { ChiNhanh: branch, ChiSo: idChiSo, TuNgay: from, DenNgay: to })
+    postData('http://localhost:9839/api/chiso/tongquan', {
+        ChiNhanh: branch,
+        ChiSo: idChiSo,
+        TuNgay: from,
+        DenNgay: to
+    })
         .then(data => {
-            
             var color = '';
             if (data.datDuoc < data.mucTieu - 10) {
                 color = '#F25961';
@@ -27,6 +31,8 @@ function createCircles(id, branch, idChiSo, from, to) {
                 styleWrapper: true,
                 styleText: true
             })
+
+            $("#" + id + "-title").text(data.tenChiSo);
         });
 }
 
@@ -34,7 +40,7 @@ async function postData(url = '', request) {
     const response = await fetch(url, {
         method: 'POST',
         mode: 'cors',
-        //cache: 'no-cache',
+        cache: 'no-cache',
         credentials: 'same-origin',
         headers: {
             'Content-Type': 'application/json'

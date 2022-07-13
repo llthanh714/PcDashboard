@@ -393,8 +393,10 @@ $(function () {
 
 	function cb(start, end) {
 		$('#reportrange span').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
-		createCircles('circles-1', '00', 'b6489fd6-6bc0-4e8e-a7bf-3f002ee88647', start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'));
-		//createCircles('circles-2', 98, 93);
+		createCircles('circles-1', '00', 'b6489fd6-6bc0-4e8e-a7bf-3f002ee88647',
+			start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'));
+		createCircles('circles-2', '00', '54ddaf01-fdfa-456a-8c50-abd3ba8e91b5',
+			start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'));
 		//createCircles('circles-3', 75, 75);
 		//createCircles('circles-4', 93, 99);
 		//createCircles('circles-5', 100, 100);

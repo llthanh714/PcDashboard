@@ -7,21 +7,6 @@
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="assets/img/icon.ico" type="image/x-icon" />
 
-	<!-- Fonts and icons -->
-	<script src="assets/js/plugin/webfont/webfont.min.js"></script>
-	<script>
-		WebFont.load({
-			google: { "families": ["Roboto:300,400,700,900"] },
-			custom: {
-				"families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
-				urls: ['assets/css/fonts.css']
-			},
-			active: function () {
-				sessionStorage.fonts = true;
-			}
-		});
-	</script>
-
 	<!-- CSS Files -->
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -44,7 +29,7 @@
 								</select>
 							</div> -->
 							<div class="col-md-9">
-								<div class="card-title" style="color: white;">DASHBOARD QLCL - BVQT PHƯƠNG CHÂU</div>
+								<div class="card-title" style="color: white;">DASHBOARD BVQT PHƯƠNG CHÂU</div>
 							</div>
 							<div class="col-md-3">
 								<div class="card-light">
@@ -94,28 +79,28 @@
 											<div id="circles-1"></div>
 											<a onclick="createCircles('circles-1', 68, 90)"
 												style="text-decoration: none; cursor: pointer;">
-												<h6 class="fw-bold mt-3 mb-0">5S Khoa phòng</h6>
+												<h6 id="circles-1-title" class="fw-bold mt-3 mb-0"></h6>
 											</a>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-2"></div>
-											<h6 class="fw-bold mt-3 mb-0">Nhiễm khuẩn</h6>
+											<h6 id="circles-2-title" class="fw-bold mt-3 mb-0"></h6>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-3"></div>
-											<h6 class="fw-bold mt-3 mb-0">Subscribers</h6>
+											<h6 id="circles-3-title" class="fw-bold mt-3 mb-0"></h6>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-4"></div>
-											<h6 class="fw-bold mt-3 mb-0">New Users</h6>
+											<h6 id="circles-4-title" class="fw-bold mt-3 mb-0"></h6>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-5"></div>
-											<h6 class="fw-bold mt-3 mb-0">Sales</h6>
+											<h6 id="circles-5-title" class="fw-bold mt-3 mb-0"></h6>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-6"></div>
-											<h6 class="fw-bold mt-3 mb-0">Test</h6>
+											<h6 id="circles-6-title" class="fw-bold mt-3 mb-0"></h6>
 										</div>
 									</div>
 								</div>
@@ -598,6 +583,21 @@
 		</div>
 
 	</div>
+
+	<!-- Fonts and icons -->
+	<script src="assets/js/plugin/webfont/webfont.min.js"></script>
+	<script>
+		WebFont.load({
+			google: { "families": ["Roboto:300,400,700,900"] },
+			custom: {
+				"families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
+				urls: ['assets/css/fonts.css']
+			},
+			active: function () {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
 
 	<!--   Core JS Files   -->
 	<script src="assets/js/core/jquery.3.2.1.min.js"></script>
