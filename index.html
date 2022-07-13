@@ -11,8 +11,11 @@
 	<script src="assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
-			google: { "families": ["Lato:300,400,700,900"] },
-			custom: { "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['assets/css/fonts.min.css'] },
+			google: { "families": ["Roboto:300,400,700,900"] },
+			custom: {
+				"families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
+				urls: ['assets/css/fonts.css']
+			},
 			active: function () {
 				sessionStorage.fonts = true;
 			}
@@ -89,7 +92,10 @@
 									<div class="d-flex flex-wrap justify-content-around pb-2 pt-4">
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-1"></div>
-											<a onclick="createCircles('circles-1', 68, 90)" style="text-decoration: none; cursor: pointer;"><h6 class="fw-bold mt-3 mb-0">5S Khoa phòng</h6></a>
+											<a onclick="createCircles('circles-1', 68, 90)"
+												style="text-decoration: none; cursor: pointer;">
+												<h6 class="fw-bold mt-3 mb-0">5S Khoa phòng</h6>
+											</a>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-2"></div>
@@ -136,7 +142,7 @@
 									<div class="card-title">Daily Sales</div>
 									<div class="card-category">March 25 - April 02</div>
 								</div>
-								<div id="chartdiv2" class="card-body pb-0" style="min-height: 450px;">
+								<div id="chartdiv2" class="card-body pb-0" style="min-height: 255px;">
 								</div>
 							</div>
 							<div class="card">
@@ -640,12 +646,6 @@
 
 	<!-- Call Functions -->
 	<script>
-		createCircles('circles-1', 68, 90);
-		createCircles('circles-2', 98, 93);
-		createCircles('circles-3', 75, 75);
-		createCircles('circles-4', 93, 99);
-		createCircles('circles-5', 100, 100);
-		createCircles('circles-6', 33, 35);
 
 		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 250], {
 			type: 'line',
