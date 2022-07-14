@@ -93,6 +93,6 @@ function createBarChart(divId, url, branch, idChiSo, from, to) {
                 chart.appear(1000, 100);
             });
 
-            $("#column-1-title").text(data.tenChiSo);
+            $("#" + divId + "-title").text(data.tenChiSo);
         });
 }

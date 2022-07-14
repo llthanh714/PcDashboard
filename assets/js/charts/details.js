@@ -5,7 +5,8 @@ function viewDetail(id, branch) {
     let from = $("#date-from").text();
     let to = $("#date-to").text();
 
-    createBarChart('column-1', url, branch, idChiSo, from, to);
+    //createBarChart('column-1', url, branch, idChiSo, from, to);
+    createLineChart('column-1', url, branch, idChiSo, from, to);
 }
 
 async function postData(url = '', request) {
