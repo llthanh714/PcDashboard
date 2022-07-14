@@ -1,4 +1,7 @@
-function createColumns(idChiSo, branch, from, to) {
+function createColumns(idChiSo, branch) {
+
+    let from = $("#date-from").text();
+    let to = $("#date-to").text();
 
     postData('http://localhost:9839/api/chiso/khoaphong', {
         ChiNhanh: branch,
