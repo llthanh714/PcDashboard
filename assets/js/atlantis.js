@@ -401,6 +401,12 @@ $(function () {
 		createCircles('circles-2', '00', '54ddaf01-fdfa-456a-8c50-abd3ba8e91b5',
 			start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'));
 
+		createCircles('circles-3', '00', '1158d2e8-fb87-44ee-8044-be3f42e51a87',
+			start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'));
+
+		createCircles('circles-4', '00', '211fe9ab-4378-4d72-89d8-1889b1113f5e',
+			start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'));
+
 	}
 
 	$('#reportrange').daterangepicker({
@@ -412,7 +418,8 @@ $(function () {
 			'7 ngày trước': [moment().subtract(6, 'days'), moment()],
 			'30 ngày trước': [moment().subtract(29, 'days'), moment()],
 			'Tháng này': [moment().startOf('month'), moment().endOf('month')],
-			'Tháng trước': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+			'Tháng trước': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+			'Quý trước': [moment().subtract(6, 'month').startOf('month'), moment().subtract(3, 'month').endOf('month')]
 		}
 	}, cb);
 

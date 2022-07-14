@@ -78,36 +78,52 @@
 									<div class="card-category"></div>
 									<div class="d-flex flex-wrap justify-content-around pb-2 pt-4">
 										<div class="px-2 pb-2 pb-md-0 text-center">
-											<div id="circles-1"></div>
-											<a onclick="createColumns('circles-1', '00')"
+											<a onclick="viewDetail('circles-1', '00')"
 												style="text-decoration: none; cursor: pointer;">
+												<div id="circles-1"></div>
 												<h6 id="circles-1-title" class="fw-bold mt-3 mb-0"></h6>
 												<div id="circles-1-id" style="display: none;"></div>
 											</a>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
-											<div id="circles-2"></div>
-											<a onclick="createColumns('circles-2', '00')"
+											<a onclick="viewDetail('circles-2', '00')"
 												style="text-decoration: none; cursor: pointer;">
+												<div id="circles-2"></div>
 												<h6 id="circles-2-title" class="fw-bold mt-3 mb-0"></h6>
 												<div id="circles-2-id" style="display: none;"></div>
 											</a>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
-											<div id="circles-3"></div>
-											<h6 id="circles-3-title" class="fw-bold mt-3 mb-0"></h6>
+											<a onclick="viewDetail('circles-3', '00')"
+												style="text-decoration: none; cursor: pointer;">
+												<div id="circles-3"></div>
+												<h6 id="circles-3-title" class="fw-bold mt-3 mb-0"></h6>
+												<div id="circles-3-id" style="display: none;"></div>
+											</a>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
-											<div id="circles-4"></div>
-											<h6 id="circles-4-title" class="fw-bold mt-3 mb-0"></h6>
+											<a onclick="viewDetail('circles-4', '00')"
+												style="text-decoration: none; cursor: pointer;">
+												<div id="circles-4"></div>
+												<h6 id="circles-4-title" class="fw-bold mt-3 mb-0"></h6>
+												<div id="circles-4-id" style="display: none;"></div>
+											</a>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
-											<div id="circles-5"></div>
-											<h6 id="circles-5-title" class="fw-bold mt-3 mb-0"></h6>
+											<a onclick="viewDetail('circles-5', '00')"
+												style="text-decoration: none; cursor: pointer;">
+												<div id="circles-5"></div>
+												<h6 id="circles-5-title" class="fw-bold mt-3 mb-0"></h6>
+												<div id="circles-5-id" style="display: none;"></div>
+											</a>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
-											<div id="circles-6"></div>
-											<h6 id="circles-6-title" class="fw-bold mt-3 mb-0"></h6>
+											<a onclick="viewDetail('circles-6', '00')"
+												style="text-decoration: none; cursor: pointer;">
+												<div id="circles-6"></div>
+												<h6 id="circles-6-title" class="fw-bold mt-3 mb-0"></h6>
+												<div id="circles-6-id" style="display: none;"></div>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -648,13 +664,12 @@
 
 	<!-- Charts -->
 	<script src="assets/js/charts/column-with-rotated-labels.js"></script>
+	<script src="assets/js/charts/details.js"></script>
 	<script src="assets/js/charts/circles.js"></script>
 	<script src="assets/js/charts/kham-noi-ngoai.js"></script>
-
+	
 	<!-- Call Functions -->
 	<script>
-
-		createColumns('circles-1', '00', $("#date-from").text(), $("#date-to").text())
 
 		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 250], {
 			type: 'line',

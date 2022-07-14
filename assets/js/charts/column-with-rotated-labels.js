@@ -1,25 +1,21 @@
-function createColumns(idChiSo, branch) {
-
-    let from = $("#date-from").text();
-    let to = $("#date-to").text();
-
-    postData('http://localhost:9839/api/chiso/khoaphong', {
+function createBarChart(divId, url, branch, idChiSo, from, to) {
+    postData(url, {
         ChiNhanh: branch,
-        ChiSo: document.getElementById(idChiSo + '-id').textContent,
+        ChiSo: idChiSo,
         TuNgay: from,
         DenNgay: to
     })
         .then(data => {
 
             am5.array.each(am5.registry.rootElements, function (root) {
-                if (root.dom.id == 'column-1') {
+                if (root.dom.id == divId) {
                     root.dispose();
                 }
             });
 
             am5.ready(function () {
 
-                var root = am5.Root.new('column-1');
+                var root = am5.Root.new(divId);
 
                 // Set themes
                 // https://www.amcharts.com/docs/v5/concepts/themes/
@@ -99,20 +95,4 @@ function createColumns(idChiSo, branch) {
 
             $("#column-1-title").text(data.tenChiSo);
         });
-}
-
-async function postData(url = '', request) {
-    const response = await fetch(url, {
-        method: 'POST',
-        mode: 'cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        redirect: 'follow',
-        referrerPolicy: 'no-referrer',
-        body: JSON.stringify(request)
-    });
-    return response.json();
 }

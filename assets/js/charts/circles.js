@@ -7,8 +7,6 @@ function createCircles(id, branch, idChiSo, from, to) {
     })
         .then(data => {
 
-            //alert(JSON.stringify(data))
-
             var color = '';
             if (data.datDuoc < data.mucTieu - 10) {
                 color = '#F25961';
