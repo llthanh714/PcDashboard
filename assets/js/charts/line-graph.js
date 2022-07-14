@@ -130,12 +130,12 @@ function createLineChart(divId, url, branch, idChiSo, from, to) {
                 cursor.lineY.set("visible", false);
 
                 // add scrollbar
-                // chart.set("scrollbarX", am5.Scrollbar.new(root, { orientation: "horizontal" }));
+                chart.set("scrollbarX", am5.Scrollbar.new(root, { orientation: "horizontal" }));
 
                 // Make stuff animate on load
                 // https://www.amcharts.com/docs/v5/concepts/animations/
+                series.appear(1000);
                 chart.appear(1000, 100);
-
             });
 
             $("#" + divId + "-title").text(data.tenChiSo);

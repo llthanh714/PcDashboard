@@ -1,5 +1,5 @@
 function createCircles(id, branch, idChiSo, from, to) {
-    postData('http://localhost:9839/api/chiso/tongquan', {
+    postData(endpoint + 'chiso/tongquan', {
         ChiNhanh: branch,
         ChiSo: idChiSo,
         TuNgay: from,
@@ -35,6 +35,7 @@ function createCircles(id, branch, idChiSo, from, to) {
 
             $("#" + id + "-title").text(data.tenChiSo);
             $("#" + id + "-id").text(data.idChiSo);
+            $("#" + id + "-type").text(data.loaiBieuDo);
         });
 }
 

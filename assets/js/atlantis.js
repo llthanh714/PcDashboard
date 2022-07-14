@@ -384,6 +384,8 @@ $('.form-floating-label .form-control').keyup(function () {
 	}
 })
 
+let endpoint = 'http://113.161.210.94:9001/pcportal/api/';
+
 //Datetime Picker
 $(function () {
 
