@@ -1,11 +1,14 @@
 function createCircles(id, branch, idChiSo, from, to) {
-    postData('http://113.161.210.94:9001/pcportal/api/chiso/tongquan', {
+    postData('http://localhost:9839/api/chiso/tongquan', {
         ChiNhanh: branch,
         ChiSo: idChiSo,
         TuNgay: from,
         DenNgay: to
     })
         .then(data => {
+
+            //alert(JSON.stringify(data))
+
             var color = '';
             if (data.datDuoc < data.mucTieu - 10) {
                 color = '#F25961';
@@ -33,6 +36,7 @@ function createCircles(id, branch, idChiSo, from, to) {
             })
 
             $("#" + id + "-title").text(data.tenChiSo);
+            $("#" + id + "-id").text(data.idChiSo);
         });
 }
 

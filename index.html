@@ -38,6 +38,8 @@
 										<i class="fa fa-calendar"></i>&nbsp;
 										<span></span> <i class="fa fa-caret-down"></i>
 									</div>
+									<div id="date-from" style="display: none;"></div>
+									<div id="date-to" style="display: none;"></div>
 								</div>
 							</div>
 						</div>
@@ -77,14 +79,19 @@
 									<div class="d-flex flex-wrap justify-content-around pb-2 pt-4">
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-1"></div>
-											<a onclick="createColumns()"
+											<a onclick="createColumns('circles-1', '00', '06/01/2022', '07/01/2022')"
 												style="text-decoration: none; cursor: pointer;">
 												<h6 id="circles-1-title" class="fw-bold mt-3 mb-0"></h6>
+												<div id="circles-1-id" style="display: none;"></div>
 											</a>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-2"></div>
-											<h6 id="circles-2-title" class="fw-bold mt-3 mb-0"></h6>
+											<a onclick="createColumns('circles-2', '00', '06/01/2022', '07/01/2022')"
+												style="text-decoration: none; cursor: pointer;">
+												<h6 id="circles-2-title" class="fw-bold mt-3 mb-0"></h6>
+												<div id="circles-2-id" style="display: none;"></div>
+											</a>
 										</div>
 										<div class="px-2 pb-2 pb-md-0 text-center">
 											<div id="circles-3"></div>
@@ -112,11 +119,11 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-title">User Statistics</div>
+										<div id="column-1-title" class="card-title"></div>
 									</div>
 								</div>
 								<div class="card-body">
-									<div id="chartdiv" class="chart-container" style="min-height: 440px">
+									<div id="column-1" class="chart-container" style="min-height: 440px">
 									</div>
 								</div>
 							</div>
@@ -640,12 +647,14 @@
 	<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
 	<!-- Charts -->
-	<script src="assets/js/charts/columns.js"></script>
+	<script src="assets/js/charts/column-with-rotated-labels.js"></script>
 	<script src="assets/js/charts/circles.js"></script>
 	<script src="assets/js/charts/kham-noi-ngoai.js"></script>
 
 	<!-- Call Functions -->
 	<script>
+
+		createColumns('circles-1', '00', $("#date-from").text(), $("#date-to").text())
 
 		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 250], {
 			type: 'line',
