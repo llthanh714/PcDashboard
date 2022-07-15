@@ -384,7 +384,8 @@ $('.form-floating-label .form-control').keyup(function () {
 	}
 })
 
-let endpoint = 'http://113.161.210.94:9001/pcportal/api/';
+//let endpoint = 'http://113.161.210.94:9001/pcportal/api/';
+let endpoint = 'http://localhost:9839/api/';
 
 //Datetime Picker
 $(function () {
@@ -407,6 +408,9 @@ $(function () {
 			start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'));
 
 		createCircles('circles-4', '00', '211fe9ab-4378-4d72-89d8-1889b1113f5e',
+			start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'));
+
+		createCircles('circles-5', '00', '1d5c149f-9adc-478b-82e7-ee7491cca0db',
 			start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'));
 
 	}

@@ -6944,6 +6944,10 @@ label.error {
   font-size: 25px !important;
 }
 
+.circles-text {
+  font-size: 20px !important;
+}
+
 /*     Chart JS Container    */
 .chart-container {
   min-height: 300px;

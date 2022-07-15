@@ -38,8 +38,7 @@
 							</div>
 							<div class="col-md-3">
 								<div class="card-light">
-									<div id="reportrange"
-										style="cursor: pointer; padding: 10px; text-align: center;">
+									<div id="reportrange" style="cursor: pointer; padding: 10px; text-align: center;">
 										<i class="fa fa-calendar"></i>&nbsp;
 										<span></span> <i class="fa fa-caret-down"></i>
 									</div>
@@ -60,11 +59,11 @@
 										<div class="col-md-4 d-flex flex-column justify-content-around">
 											<div>
 												<h6 class="fw-bold text-uppercase text-success op-8">Ngoại trú</h6>
-												<h3 class="fw-bold">$9.782</h3>
+												<h3 class="fw-bold">782</h3>
 											</div>
 											<div>
 												<h6 class="fw-bold text-uppercase text-danger op-8">Nội trú</h6>
-												<h3 class="fw-bold">$1,248</h3>
+												<h3 class="fw-bold">248</h3>
 											</div>
 										</div>
 										<div class="col-md-8">
@@ -127,7 +126,7 @@
 												<div id="circles-5-type" style="display: none;"></div>
 											</a>
 										</div>
-										<div class="px-2 pb-2 pb-md-0 text-center">
+										<!-- <div class="px-2 pb-2 pb-md-0 text-center">
 											<a onclick="viewDetail('circles-6', '00')"
 												style="text-decoration: none; cursor: pointer;">
 												<div id="circles-6"></div>
@@ -135,7 +134,7 @@
 												<div id="circles-6-id" style="display: none;"></div>
 												<div id="circles-6-type" style="display: none;"></div>
 											</a>
-										</div>
+										</div> -->
 									</div>
 								</div>
 							</div>
@@ -157,9 +156,9 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="card card-primary">
+							<div class="card card-light">
 								<div class="card-header">
-									<div class="card-title">Daily Sales</div>
+									<div class="card-title">Chi tiết</div>
 								</div>
 								<div id="chartdiv2" class="chart-container"
 									style="padding-bottom: 10px; min-height: 255px;">
@@ -668,6 +667,10 @@
 
 	<!-- Call Functions -->
 	<script>
+
+		$(document).ready(function () {
+			viewDetail('circles-1', '00')
+		});
 
 		$('#lineChart').sparkline([105, 103, 123, 100, 95, 105, 250], {
 			type: 'line',

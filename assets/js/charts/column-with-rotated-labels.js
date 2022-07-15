@@ -56,7 +56,7 @@ function createBarChart(divId, url, branch, idChiSo, from, to) {
                 }));
 
                 var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-                    baseValue: data.mucTieu,
+                    //baseValue: data.mucTieu,
                     maxDeviation: 0.3,
                     renderer: am5xy.AxisRendererY.new(root, {})
                 }));

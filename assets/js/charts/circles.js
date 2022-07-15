@@ -8,10 +8,10 @@ function createCircles(id, branch, idChiSo, from, to) {
         .then(data => {
 
             var color = '';
-            if (data.datDuoc < data.mucTieu - 10) {
+            if (data.phanTram < 50) {
                 color = '#F25961';
             }
-            else if (data.datDuoc >= data.mucTieu - 10 && data.datDuoc < data.mucTieu) {
+            else if (data.phanTram <= 95) {
                 color = '#FF9E27';
             }
             else {
@@ -20,10 +20,10 @@ function createCircles(id, branch, idChiSo, from, to) {
 
             Circles.create({
                 id: id,
-                radius: 40,
-                value: data.datDuoc,
+                radius: 45,
+                value: data.phanTram,
                 maxValue: 100,
-                width: 7,
+                width: 9,
                 text: data.datDuoc,
                 colors: ['#f1f1f1', color],
                 duration: 400,
