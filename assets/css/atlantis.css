@@ -33,6 +33,7 @@ button.close {
 }
 
 body {
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   color: #575962;
 }
@@ -4451,7 +4452,6 @@ label {
 .card-pricing2 .pricing-content li.disable:before,
 .card-pricing2 .pricing-content li:before {
   content: "\f00c";
-  font-family: 'Font Awesome 5 Solid';
   font-weight: 900;
   width: 20px;
   height: 20px;
@@ -5052,7 +5052,6 @@ label {
 
 .accordion .card>.card-header>.span-mode:before {
   content: "\f068" !important;
-  font-family: 'Font Awesome 5 Solid';
   font-weight: 900;
   font-size: 16px;
 }
@@ -5359,7 +5358,6 @@ label {
   line-height: 0.8;
   color: #1572E8;
   transition: all .2s;
-  font-family: 'Font Awesome 5 Solid';
 }
 
 .form-check [type="checkbox"]:not(:checked)+.form-check-sign:after {
@@ -5434,7 +5432,6 @@ label {
 .form-radio [type="radio"]:not(:checked)+.form-radio-sign:before {
   content: "\f18a";
   font-size: 22px;
-  font-family: LineAwesome;
   position: absolute;
   left: 0;
   top: auto;
@@ -5446,7 +5443,6 @@ label {
 .form-radio [type="radio"]:checked+.form-radio-sign:before {
   content: "\f18a";
   font-size: 22px;
-  font-family: LineAwesome;
   position: absolute;
   left: 0;
   top: auto;
@@ -5466,7 +5462,6 @@ label {
   color: #4D7CFE;
   transition: all .2s;
   line-height: 1;
-  font-family: LineAwesome;
 }
 
 .form-radio [type="radio"]:not(:checked)+.form-radio-sign:after {

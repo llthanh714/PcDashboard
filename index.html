@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Phương Châu Dashboard</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
@@ -9,6 +10,9 @@
 	<link rel="icon" href="assets/img/icon.ico" type="image/x-icon" />
 
 	<!-- CSS Files -->
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,300&display=swap');
+	</style>
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/atlantis.css">
@@ -35,7 +39,7 @@
 							<div class="col-md-3">
 								<div class="card-light">
 									<div id="reportrange"
-										style="cursor: pointer; width: 100%; padding: 10px; text-align: center;">
+										style="cursor: pointer; padding: 10px; text-align: center;">
 										<i class="fa fa-calendar"></i>&nbsp;
 										<span></span> <i class="fa fa-caret-down"></i>
 									</div>
@@ -146,7 +150,8 @@
 									</div>
 								</div>
 								<div class="card-body">
-									<div id="column-1" class="chart-container" style="padding-top: -5px; min-height: 440px">
+									<div id="column-1" class="chart-container"
+										style="padding-top: -5px; min-height: 440px">
 									</div>
 								</div>
 							</div>
@@ -156,7 +161,8 @@
 								<div class="card-header">
 									<div class="card-title">Daily Sales</div>
 								</div>
-								<div id="chartdiv2" class="chart-container" style="padding-bottom: 10px; min-height: 255px;">
+								<div id="chartdiv2" class="chart-container"
+									style="padding-bottom: 10px; min-height: 255px;">
 								</div>
 							</div>
 							<div class="card">
@@ -613,21 +619,6 @@
 
 	</div>
 
-	<!-- Fonts and icons -->
-	<script src="assets/js/plugin/webfont/webfont.min.js"></script>
-	<script>
-		WebFont.load({
-			google: { "families": ["Roboto:300,400,700,900"] },
-			custom: {
-				"families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
-				urls: ['assets/css/fonts.css']
-			},
-			active: function () {
-				sessionStorage.fonts = true;
-			}
-		});
-	</script>
-
 	<!--   Core JS Files   -->
 	<script src="assets/js/core/jquery.3.2.1.min.js"></script>
 	<script src="assets/js/core/popper.min.js"></script>
@@ -674,7 +665,7 @@
 	<script src="assets/js/charts/details.js"></script>
 	<script src="assets/js/charts/circles.js"></script>
 	<script src="assets/js/charts/total-income.js"></script>
-	
+
 	<!-- Call Functions -->
 	<script>
 
