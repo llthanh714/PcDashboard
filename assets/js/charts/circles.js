@@ -8,10 +8,10 @@ function createCircles(id, branch, idChiSo, from, to) {
         .then(data => {
 
             var color = '';
-            if (data.phanTram < 50) {
+            if (data.phanTram < 75) {
                 color = '#F25961';
             }
-            else if (data.phanTram <= 95) {
+            else if (data.phanTram <= 98) {
                 color = '#FF9E27';
             }
             else {

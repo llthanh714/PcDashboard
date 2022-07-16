@@ -134,7 +134,7 @@ function createLineChart(divId, url, branch, idChiSo, from, to) {
 
                 // Make stuff animate on load
                 // https://www.amcharts.com/docs/v5/concepts/animations/
-                series.appear(1000);
+                series.appear(500);
                 chart.appear(1000, 100);
             });
 
