@@ -1,5 +1,4 @@
 function viewDetail(id, branch) {
-
     let url = endpoint + 'chiso/khoaphong';
     let idChiSo = document.getElementById(id + '-id').textContent;
     let from = $("#date-from").text();

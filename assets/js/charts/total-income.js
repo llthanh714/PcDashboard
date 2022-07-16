@@ -4,7 +4,7 @@ var mytotalIncomeChart = new Chart(totalIncomeChart, {
     data: {
         labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", ""],
         datasets: [{
-            label: "Tổng",
+            label: "Trung bình",
             backgroundColor: '#ff9e27',
             borderColor: 'rgb(23, 125, 255)',
             data: [6, 5, 9, 5, 4, 6, 4, 0],

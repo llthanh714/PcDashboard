@@ -42,6 +42,8 @@ function createBarChart(divId, url, branch, idChiSo, from, to) {
                 // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
                 var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
                 xRenderer.labels.template.setAll({
+                    oversizedBehavior: "truncate",
+                    maxWidth: 150,
                     rotation: -45,
                     centerY: am5.p50,
                     centerX: am5.p100,
