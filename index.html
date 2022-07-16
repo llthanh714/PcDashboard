@@ -161,12 +161,39 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="card card-primary">
-								<div class="card-header">
-									<div class="card-title">IPSGs</div>
-								</div>
-								<div id="chartdiv2" class="chart-container"
-									style="padding-bottom: 10px; min-height: 350px;">
+							<div class="card">
+								<div class="card-body">
+									<div class="d-flex justify-content-between">
+										<div>
+											<h5><b>IPSGs</b></h5>
+										</div>
+										<h3 class="text-info fw-bold">$170</h3>
+									</div>
+									<table class="table-striped">
+										<tr>
+											<div class="progress">
+												<div class="progress-bar bg-info w-50" role="progressbar"
+													aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+											</div>
+											<div class="d-flex justify-content-between mt-2">
+												<p class="text-muted mb-0">Tỷ lệ tuân thủ thực hiện Time-out tại phòng mổ</p>
+												<p class="text-muted mb-0">75%</p>
+											</div>
+											<br>
+										</tr>
+										<tr>
+											<div class="progress">
+												<div class="progress-bar bg-danger" role="progressbar"
+													aria-valuenow="7" aria-valuemin="0" aria-valuemax="100"
+													style="width:7%"></div>
+											</div>
+											<div class="d-flex justify-content-between mt-2">
+												<p class="text-muted mb-0">Change</p>
+												<p class="text-muted mb-0">75%</p>
+											</div>
+											<br>
+										</tr>
+									</table>
 								</div>
 							</div>
 						</div>
@@ -222,7 +249,9 @@
 	<!-- Resources -->
 	<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
 	<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+	<script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
 	<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+	<script src="//cdn.amcharts.com/lib/5/themes/Micro.js"></script>
 
 	<!-- Charts -->
 	<script src="assets/js/charts/column-with-rotated-labels.js"></script>
@@ -230,6 +259,7 @@
 	<script src="assets/js/charts/details.js"></script>
 	<script src="assets/js/charts/circles.js"></script>
 	<script src="assets/js/charts/total-income.js"></script>
+	<!-- <script src="assets/js/charts/carbon-zero-progress.js"></script> -->
 
 </body>
 
