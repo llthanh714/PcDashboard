@@ -384,8 +384,8 @@ $('.form-floating-label .form-control').keyup(function () {
 	}
 })
 
-let endpoint = 'http://113.161.210.94:9001/pcportal/api/';
-//let endpoint = 'http://localhost:9839/api/';
+//let endpoint = 'http://113.161.210.94:9001/pcportal/api/';
+let endpoint = 'http://localhost:9839/api/';
 
 //Datetime Picker
 $(function () {
@@ -413,18 +413,22 @@ $(function () {
 		createCircles('circles-5', '00', '1d5c149f-9adc-478b-82e7-ee7491cca0db',
 			start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'));
 
+		createIPSGs('00', start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'))
+
+		document.getElementById("column-1-title").innerText = 'Vui lòng ấn chọn một chỉ số để xem thông tin chi tiết';
 	}
 
 	$('#reportrange').daterangepicker({
 		startDate: start,
 		endDate: end,
 		ranges: {
-			'Hôm nay': [moment(), moment()],
-			'Hôm qua': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+			// 'Hôm nay': [moment(), moment()],
+			// 'Hôm qua': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
 			'7 ngày trước': [moment().subtract(6, 'days'), moment()],
-			'30 ngày trước': [moment().subtract(29, 'days'), moment()],
+			//'30 ngày trước': [moment().subtract(29, 'days'), moment()],
 			'Tháng này': [moment().startOf('month'), moment().endOf('month')],
 			'Tháng trước': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+			'Quý này': [moment().subtract(3, 'month').startOf('month'), moment().endOf('month')],
 			'Quý trước': [moment().subtract(6, 'month').startOf('month'), moment().subtract(3, 'month').endOf('month')]
 		}
 	}, cb);
