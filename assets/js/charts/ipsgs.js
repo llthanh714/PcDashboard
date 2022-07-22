@@ -32,10 +32,10 @@ async function createIPSGs(branch, from, to) {
 async function addDetail(item, index, array) {
     var obj = Object.values(item);
     var color = '';
-    if (obj[4] >= 98) {
+    if (obj[4] >= 90) {
         color = 'bg-success';
     }
-    else if (obj[4] >= 75) {
+    else if (obj[4] >= 70) {
         color = 'bg-warning';
     }
     else {
@@ -45,7 +45,7 @@ async function addDetail(item, index, array) {
         + '<p class="text-muted mb-0" style="max-height: 50px;">' + obj[1] + '</p>'
         + '<p class="text-muted mb-0">' + obj[4] + '%</p>'
         + '</div>'
-        + '<div class="progress" style="animation-name: slideInLeft; animation-duration: 0.5s; height: 9px">'
+        + '<div class="progress" style="animation-name: pulse; animation-duration: 0.5s; height: 9px">'
         + '<div class="progress-bar ' + color + '" role="progressbar"'
         + 'aria-valuenow="' + obj[4] + '" aria-valuemin="0" aria-valuemax="100" style="width:' + obj[4] + '%">'
         + '</div>'

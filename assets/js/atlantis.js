@@ -398,6 +398,8 @@ $(function () {
 		$("#date-from").text(start.format('MM/DD/YYYY'));
 		$("#date-to").text(end.format('MM/DD/YYYY'));
 
+		createIncome('00', start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'));
+
 		createCircles('circles-1', '00', 'b6489fd6-6bc0-4e8e-a7bf-3f002ee88647',
 			start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'));
 

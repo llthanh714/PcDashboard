@@ -92,7 +92,7 @@ function createBarChart(divId, url, branch, idChiSo, from, to) {
                 // Make stuff animate on load
                 // https://www.amcharts.com/docs/v5/concepts/animations/
                 series.appear(500);
-                chart.appear(1000, 100);
+                chart.appear(500, 100);
             });
 
             $("#" + divId + "-title").text(data.tenChiSo);
