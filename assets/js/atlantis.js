@@ -413,6 +413,8 @@ $(function () {
 		createCircles('circles-5', '00', '1d5c149f-9adc-478b-82e7-ee7491cca0db',
 			start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'));
 
+		viewDetailById('54ddaf01-fdfa-456a-8c50-abd3ba8e91b5', '00');
+
 		createIPSGs('00', start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'))
 
 		document.getElementById("column-1-title").innerText = 'Vui lòng ấn chọn một chỉ số để xem thông tin chi tiết';

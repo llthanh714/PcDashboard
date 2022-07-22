@@ -1,4 +1,4 @@
-function viewDetail(id, branch) {
+async function viewDetail(id, branch) {
     let url = endpoint + 'chiso/khoaphong';
     let idChiSo = document.getElementById(id + '-id').textContent;
     let from = $("#date-from").text();
@@ -11,6 +11,13 @@ function viewDetail(id, branch) {
     else if (type == 'Line & Area'){
         createLineChart('column-1', url, branch, idChiSo, from, to);
     }
+}
+
+async function viewDetailById(idChiSo, branch) {
+    let url = endpoint + 'chiso/khoaphong';
+    let from = $("#date-from").text();
+    let to = $("#date-to").text();
+    createBarChart('column-1', url, branch, idChiSo, from, to);
 }
 
 async function postData(url = '', request) {
