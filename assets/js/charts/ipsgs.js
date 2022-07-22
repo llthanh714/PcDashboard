@@ -42,7 +42,7 @@ async function addDetail(item, index, array) {
         color = 'bg-danger';
     }
     var html = '<div class="d-flex justify-content-between mt-2" style="animation-name: fadeIn; animation-duration: 0.5s;">'
-        + '<p class="text-muted mb-0" style="max-height: 50px;">' + obj[1] + '</p>'
+        + '<p class="text-muted mb-0">' + obj[1] + '</p>'
         + '<p class="text-muted mb-0">' + obj[4] + '%</p>'
         + '</div>'
         + '<div class="progress" style="animation-name: pulse; animation-duration: 0.5s; height: 9px">'

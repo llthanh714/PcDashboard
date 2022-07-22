@@ -54,7 +54,7 @@ async function createIncome(branch, from, to) {
                                         display: false
                                     }
                                 }]
-                            },
+                            }
                         }
                     });
                 })

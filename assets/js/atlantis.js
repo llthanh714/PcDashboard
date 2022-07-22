@@ -384,7 +384,7 @@ $('.form-floating-label .form-control').keyup(function () {
 	}
 })
 
-let endpoint = 'http://113.161.210.94:9001/pcportal/api/';
+let endpoint = 'https://portal.phuongchau.com:9901/pcportal/api/';
 //let endpoint = 'http://localhost:9839/api/';
 
 //Datetime Picker
