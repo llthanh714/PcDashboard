@@ -5,10 +5,10 @@ async function viewDetail(id, branch) {
     let to = $("#date-to").text();
     let type = document.getElementById(id + '-type').textContent;
 
-    if (type == 'Column & Bar'){
+    if (type == 'Column & Bar') {
         createBarChart('column-1', url, branch, idChiSo, from, to);
     }
-    else if (type == 'Line & Area'){
+    else if (type == 'Line & Area') {
         createLineChart('column-1', url, branch, idChiSo, from, to);
     }
 }
