@@ -2,7 +2,7 @@ var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2
 var mytotalIncomeChart = new Chart(totalIncomeChart, {
     type: 'bar',
     data: {
-        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", ""],
+        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
         datasets: [{
             label: "Trung bình",
             backgroundColor: '#ff9e27',

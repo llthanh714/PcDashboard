@@ -1,4 +1,4 @@
-function createIPSGs(branch, from, to) {
+async function createIPSGs(branch, from, to) {
     document.getElementById("ipsgs-chart").innerHTML = '';
     let request = { ChiNhanh: branch, TuNgay: from, DenNgay: to }
     fetch(endpoint + 'chiso/ipsgs', {
@@ -29,7 +29,7 @@ function createIPSGs(branch, from, to) {
         });
 }
 
-function addDetail(item, index, array) {
+async function addDetail(item, index, array) {
     var obj = Object.values(item);
     var color = '';
     if (obj[4] >= 98) {
@@ -41,15 +41,16 @@ function addDetail(item, index, array) {
     else {
         color = 'bg-danger';
     }
-    var html = '<div class="progress">'
+    var html = '<div class="d-flex justify-content-between mt-2" style="animation-name: fadeIn; animation-duration: 0.5s;">'
+        + '<p class="text-muted mb-0" style="max-height: 50px;">' + obj[1] + '</p>'
+        + '<p class="text-muted mb-0">' + obj[4] + '%</p>'
+        + '</div>'
+        + '<div class="progress" style="animation-name: slideInLeft; animation-duration: 0.5s; height: 9px">'
         + '<div class="progress-bar ' + color + '" role="progressbar"'
         + 'aria-valuenow="' + obj[4] + '" aria-valuemin="0" aria-valuemax="100" style="width:' + obj[4] + '%">'
         + '</div>'
         + '</div>'
-        + '<div class="d-flex justify-content-between mt-2">'
-        + '<p class="text-muted mb-0">' + obj[1] + '</p>'
-        + '<p class="text-muted mb-0">' + obj[4] + '%</p>'
-        + '</div><br>';
+        + '<br>';
     document.getElementById("ipsgs-chart").innerHTML += html;
 };
 
