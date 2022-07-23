@@ -21,8 +21,8 @@ async function createIncome(branch, from, to) {
                 response.json().then(ApiData => {
                     $('#totalIncomeChart').remove(); // this is my <canvas> element
                     $('#chart-container').append('<canvas id="totalIncomeChart"></canvas>');
-                    var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
-                    var mytotalIncomeChart = new Chart(totalIncomeChart, {
+                    let totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
+                    let mytotalIncomeChart = new Chart(totalIncomeChart, {
                         type: 'bar',
                         data: {
                             labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
