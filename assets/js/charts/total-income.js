@@ -1,7 +1,4 @@
 async function createIncome(branch, from, to) {
-    // if (mytotalIncomeChart != null){
-    //     mytotalIncomeChart.destroy();
-    // }
     let request = { ChiNhanh: branch, TuNgay: from, DenNgay: to }
     fetch(endpoint + 'chiso/sluong-tiepnhan', {
         method: 'POST',
