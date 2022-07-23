@@ -1,5 +1,7 @@
 async function createIncome(branch, from, to) {
-    document.getElementById("totalIncomeChart").innerHTML = '';
+    // if (mytotalIncomeChart != null){
+    //     mytotalIncomeChart.destroy();
+    // }
     let request = { ChiNhanh: branch, TuNgay: from, DenNgay: to }
     fetch(endpoint + 'chiso/sluong-tiepnhan', {
         method: 'POST',
@@ -20,6 +22,8 @@ async function createIncome(branch, from, to) {
                     return;
                 }
                 response.json().then(ApiData => {
+                    $('#totalIncomeChart').remove(); // this is my <canvas> element
+                    $('#chart-container').append('<canvas id="totalIncomeChart"></canvas>');
                     var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
                     var mytotalIncomeChart = new Chart(totalIncomeChart, {
                         type: 'bar',
@@ -41,7 +45,7 @@ async function createIncome(branch, from, to) {
                             scales: {
                                 yAxes: [{
                                     ticks: {
-                                        display: true //this will remove only the label
+                                        display: true //This will remove only the label
                                     },
                                     gridLines: {
                                         drawBorder: false,
