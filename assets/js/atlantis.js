@@ -390,8 +390,8 @@ let endpoint = 'https://portal.phuongchau.com:9901/pcportal/api/';
 //Datetime Picker
 $(function () {
 
-	var start = moment().subtract(1, 'month').startOf('month');
-	var end = moment().subtract(1, 'month').endOf('month');
+	var start = moment().subtract(3, 'month').startOf('month');
+	var end = moment().endOf('month');
 
 	function cb(start, end) {
 		$('#reportrange span').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
@@ -415,9 +415,11 @@ $(function () {
 		createCircles('circles-5', '00', '1d5c149f-9adc-478b-82e7-ee7491cca0db',
 			start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'));
 
-		viewDetailById('54ddaf01-fdfa-456a-8c50-abd3ba8e91b5', '00');
+		//viewDetailById('54ddaf01-fdfa-456a-8c50-abd3ba8e91b5', '00');
 
-		createIPSGs('00', start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'))
+		createIPSGs('00', start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'));
+
+		createChartImer('column-1', '00', start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'));
 
 		document.getElementById("column-1-title").innerText = 'Vui lòng ấn chọn một chỉ số để xem thông tin chi tiết';
 	}
@@ -438,5 +440,4 @@ $(function () {
 	}, cb);
 
 	cb(start, end);
-
 });
