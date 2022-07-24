@@ -421,7 +421,7 @@ $(function () {
 
 		createChartImer('column-1', '00', start.format('MM/DD/YYYY'), end.format('MM/DD/YYYY'));
 
-		document.getElementById("column-1-title").innerText = 'Vui lòng ấn chọn một chỉ số để xem thông tin chi tiết';
+		document.getElementById("column-1-title").innerText = 'Số lượng cấp cứu, nhập viện, chuyển viện,...';
 	}
 
 	$('#reportrange').daterangepicker({
